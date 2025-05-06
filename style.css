@@ -1,0 +1,561 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+    background-color: #0f1c16;
+    color: #FFFFFF;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+.header{
+    width: 100%;
+    height: 80px;
+    background-color: #1b2a23;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10%;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.header h1 a{
+    color: #74c69d;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 24px;
+}
+
+.nav-list{
+    list-style: none;
+    display: flex;
+    gap: 24px;
+}
+
+.nav-list a{
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-list a:hover{
+    color: #74c69d;
+}
+
+.home{
+    height: calc(100vh - 80px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 10%;
+    background-image: url(images/background-home.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+.home::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(15, 28, 22, 0.8);
+    z-index: 1;
+}
+
+.home-content{
+    position: relative;
+    z-index: 2;
+    text-align: center;
+}
+
+.home h2{
+    font-size: 28px;
+    color: #74c69d;
+    margin-bottom: 8px;
+}
+
+.home h1{
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 16px;
+}
+
+.home p{
+    font-size: 18px;
+    margin-bottom: 24px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.btn{
+    background-color: #74c69d;
+    color: #0f1c16;
+    border: none;
+    border-radius: 6px;
+    padding: 12px 28px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover{
+    background-color: #5da884;
+}
+
+.sobre{
+    padding: 80px 10%;
+    background-color: #1b2a23;
+    color: #ffffff;
+}
+
+.sobre-content{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.sobre-texto{
+    flex: 1;
+}
+
+.sobre-texto h2{
+    font-size: 36px;
+    color: #74c69d;
+    margin-bottom: 20px;
+}
+
+.sobre-texto p{
+    font-size: 18px;
+    margin-bottom: 16px;
+    line-height: 1.6;
+}
+
+.sobre-img{
+    flex: 1;
+    text-align: center;
+}
+
+.sobre-img img{
+    max-width: 300px;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.projetos{
+    padding: 80px 10%;
+    background-color: #0f1c16;
+    color: #ffffff;
+    text-align: center;
+}
+
+.projetos h2{
+    font-size: 36px;
+    color: #74c69d;
+    margin-bottom: 20px;
+}
+
+.projetos-info{
+    font-size: 18px;
+    margin-bottom: 40px;
+}
+
+.projetos-grid{
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    flex-wrap: wrap;
+}
+
+.projeto-card{
+    background-color: #1b2a23;
+    padding: 40px 20px;
+    border-radius: 8px;
+    width: 250px;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.projeto-card:hover{
+    transform: translateY(-5px);
+}
+
+.projeto-card.vazio p{
+    font-size: 18px;
+    color: #74c69d;
+}
+
+.contato{
+    padding: 80px 10%;
+    background-color: #1b2a23;
+    color: #ffffff;
+    text-align: center;
+}
+
+.contato-content{
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.contato h2{
+    font-size: 36px;
+    color: #74c69d;
+    margin-bottom: 20px;
+}
+
+.contato-info{
+    font-size: 18px;
+    margin-bottom: 40px;
+}
+
+.contato-itens{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.contato-item{
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+.contato-item:hover{
+    color: #74c69d;
+}
+
+.footer{
+    background-color: #0f1c16;
+    color: #74c69d;
+    text-align: center;
+    padding: 24px 10%;
+    border-top: 1px solid #74c69d30;
+    font-size: 14px;
+}
+
+/* RESPONSIVIDADE */
+
+@media (max-width:1015px){
+    .sobre-content{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .projetos-grid{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .header{
+        padding: 0 5%;
+    }
+
+    .home h1{
+        font-size: 36px;
+    }
+
+    .home h2{
+        font-size: 22px;
+    }
+    
+}
+
+@media (max-width: 748px) {
+    .nav-list {
+        gap: 16px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .home h1 {
+        font-size: 28px;
+    }
+
+    .home h2 {
+        font-size: 20px;
+    }
+
+    .home p {
+        font-size: 16px;
+    }
+
+    .btn {
+        padding: 10px 24px;
+        font-size: 14px;
+    }
+
+    .sobre-texto h2,
+    .projetos h2,
+    .contato h2 {
+        font-size: 28px;
+    }
+
+    .sobre-texto p,
+    .projetos-info,
+    .contato-info {
+        font-size: 16px;
+    }
+
+    .contato-item {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 665px) {
+    .header {
+        padding: 0 5%;
+    }
+
+    .nav-list {
+        gap: 12px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .home h1 {
+        font-size: 26px;
+    }
+
+    .home h2 {
+        font-size: 18px;
+    }
+
+    .home p {
+        font-size: 15px;
+    }
+
+    .btn {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+
+    .sobre-img img {
+        max-width: 220px;
+    }
+
+    .projeto-card {
+        width: 100%;
+        max-width: 280px;
+    }
+}
+
+@media (max-width:530px){
+ .header{
+    flex-wrap: wrap;
+    padding: 12px 4%;
+    gap: 8px;
+ }
+
+ .header h1 a{
+    font-size: 18px;
+ }
+
+ .nav-list{
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+ }
+
+ .nav-list a{
+    font-size: 14px;
+ }
+
+ .home h1{
+    font-size: 22px;
+ }
+
+ .home h2{
+    font-size: 16px
+ }
+
+ .home p{
+    font-size: 14px;
+ }
+
+ .btn{
+    padding: 8px 13px;
+    font-size: 13px;
+ }
+
+ .sobre-texto h2, .projetos h2, .contato h2{
+    font-size: 28px;
+ }
+
+ .sobre-texto p, .projetos-info, .contato-info, .contato-item{
+    font-size: 16px;
+ }
+
+ .sobre-img img{
+    max-width: 180px;
+ }
+
+ .footer{
+    font-size: 12px;
+    padding: 16px 5%;
+ }
+}
+
+@media (max-width:480px){
+    .header{
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding: 12px 4%;
+    }
+
+    .header h1 a{
+        font-size: 16px;
+    }
+
+    .nav-list{
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .nav-list a{
+        font-size: 13px;
+    }
+
+    .home h1{
+        font-size: 20px;
+    }
+
+    .home h2{
+        font-size: 14px;
+    }
+
+    .home p{
+        font-size: 13px;
+    }
+
+    .btn{
+        padding: 8px 16px;
+        font-size: 13px;
+    }
+
+    .sobre{
+        padding: 40px 5%;
+    }
+
+    .sobre-texto h2, .projetos h2, .contato h2{
+        font-size: 24px;
+    }
+
+    .sobre-texto p, .projetos-info, .contato-info, .contato-item {
+        font-size: 15px;
+    }
+
+    .sobre-img img{
+        max-width: 150px;
+    }
+
+    .projetos-grid{
+        gap: 16px;
+    }
+    
+    .projetos-card{
+        width: 90%;
+        height: 130px;
+    }
+
+    .contato-itens{
+        gap: 12px;
+    }
+
+    .footer{
+        font-size: 11px;
+        padding: 12px 5%;
+    }
+}
+
+@media (max-width:375px){
+    .header{
+        padding: 10px 3%;
+        gap: 10px;
+    }
+
+    .header h1 a{
+        font-size: 14px;
+    }
+
+    .nav-list{
+        gap: 8px;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .nav-list a{
+        font-size: 12px;
+    }
+
+    .home h1 {
+        font-size: 18px;
+    }
+
+    .home h2 {
+        font-size: 13px;
+    }
+
+    .home p {
+        font-size: 12px;
+    }
+
+    .btn {
+        padding: 6px 14px;
+        font-size: 12px;
+    }
+
+    .sobre {
+        padding: 32px 5%;
+    }
+
+    .sobre-texto h2,
+    .projetos h2,
+    .contato h2 {
+        font-size: 20px;
+    }
+
+    .sobre-texto p,
+    .projetos-info,
+    .contato-info,
+    .contato-item {
+        font-size: 14px;
+    }
+
+    .sobre-img img {
+        max-width: 140px;
+    }
+
+    .projeto-card {
+        width: 95%;
+        height: 120px;
+        padding: 20px 12px;
+    }
+
+    .footer {
+        font-size: 10px;
+        padding: 10px 4%;
+    }
+}
